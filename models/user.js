@@ -28,5 +28,12 @@ User.init(
                 isEmail: true
             }
         } 
+    },
+    {
+        sequelize,
+        timestamps: true,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "user"
     }
 )
