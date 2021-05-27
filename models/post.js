@@ -19,6 +19,11 @@ Post.init(
             type: DataTypes.STRING,
             allowNull:false
         },
+        date_created:{
+            type:"TIMESTAMP",
+            defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+            allowNull:false
+        },
 
         user_id: {
             type: DataTypes.INTEGER,

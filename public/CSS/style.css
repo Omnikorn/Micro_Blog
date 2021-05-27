@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+
+.postmain{
+    background-color: rgb(222, 135, 200);
+    padding: 1%;
+}
+
+.comm{
+    background-color: darksalmon;
+    color: darkslateblue;
+}
