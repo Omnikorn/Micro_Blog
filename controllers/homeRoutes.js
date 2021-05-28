@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Model } = require("sequelize/types");
+// const { Model } = require("sequelize/types");
 const {Post,user, User} = require("../models");
 const withAuth = require ("../utils/auth.js")
 
@@ -27,3 +27,6 @@ res.render("homepage", {
     res.status(500).json(err);
 }
 });
+
+
+module.exports= router
