@@ -1,10 +1,10 @@
 const router = require("express").Router();
 
-const {Post,user, User} = require("../models");
+const {Post,Comment, User} = require("../models");
 const withAuth = require ("../utils/auth.js")
 
 
-router.get("/post/:id", async(req,res) => {
+router.get("/:id", async(req,res) => {
     try{
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -22,8 +22,9 @@ router.get("/post/:id", async(req,res) => {
         const post=postData.get({plain:true});
 
         res.render("postmain", { ...post, logged_in:req.session.logged_in});
-    } catch (err) {
-        res.status(500).json(err)
+    } catch (err) {console.log("this is the error" + err)
+        res.status(500).json(err);
+        
     }
 });
 

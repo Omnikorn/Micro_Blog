@@ -2,7 +2,7 @@ const router= require("express").Router();
 
 
 const homeRoutes = require ("./homeRoutes");
-const singlepost = require ("./homeRoutes");
+const singlepost = require ("./singlepost");
 
 
 router.use("/", homeRoutes);
