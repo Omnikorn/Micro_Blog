@@ -1,9 +1,9 @@
 <div class="card col-8 postmain">
-                        <h2 class="card-title"> this is a test{{post_title}}</h5>
+                        <h2 class="card-title">{{post_title}}</h5>
                         <div class="container-fluid">
                             <div class="row justify-content-between">
                                 <div class="col"><h4 class="card-subtitle text-muted"> {{user.user_name}}</h5></div>
-                                <div class="col"><h4 class="card-subtitle text-muted">{{date_created}}</h5></div>
+                                <div class="col"><h4 class="card-subtitle text-muted">{{format_date date_created}}</h5></div>
                             </div>
                         </div>
     
@@ -11,14 +11,18 @@
                         <p class="card-text"> {{post_text}}</p>
                         <div class="container">
                             <div class=" row justify-content-end">
-                                <button class="button col-2">comment </button>
+                                <textarea class="text col-10" id="com"></textarea>
+                                <button class="button col-2" id="combtn" data-id="{{id}}">comment </button>
 
                             </div>
                         </div>
 </div>
 {{#each comments as |comment|}}
-<div class="card col-8 comm">
+<div class="card col-8 comm" id="comcard">
                         <h5 class="card-subtitle text-muted">{{user_id}} says ... </h3>
                         <p class="card-text"> {{comment_text}} </p>
                     </div>
              {{/each}}   
+
+
+<script src="/js/commenthandler.js"></script>
