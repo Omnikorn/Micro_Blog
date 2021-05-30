@@ -2,13 +2,13 @@
 <div class="card col-8 postmain">
 	<h5 class="card-title"><a href="/post/{{id}}">  {{post_title}}</a> </h5>
 	<p class="card-text">
-		{{post.date_created}}
+	created on	{{format_date post.date_created}}
 	</p>
 </div>
 {{/each}}
-<div>
+{{!-- <div>
 	<textarea class="text"></textarea>
 	<button class="Submit"> Create New post</button>
 </div>
 
-<script src="/js/newPost.js"></script>
+<script src="/js/newPost.js"></script> --}}

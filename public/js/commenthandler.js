@@ -1,4 +1,6 @@
-let comm = document.querySelector("#com").value();
+// const { json } = require("sequelize/types");
+
+let comm = document.querySelector("#com").value;
 let commbtn = document.querySelector("#combtn");
 
 const createNewComment = async (event) =>{
@@ -8,7 +10,7 @@ const createNewComment = async (event) =>{
         const id = event.target.getAttribute('data-id');
 
     const response= await fetch ("/api/comment" , {
-        method:"PUT",
+        method:"POST",
         body: JSON.stringify({comm, id}),
     
     headers: {

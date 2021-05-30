@@ -5,7 +5,7 @@ const {Post,Comment, User} = require("../../models");
 
 
 
-router.put("/comment" , async (req,res) =>{
+router.post("/comment" , async (req,res) =>{
     try{
         const commentData = await Comment.create ({
             where:{
