@@ -1,0 +1,17 @@
+<h3> Welcome {{user_name}}</h3>
+{{#each user.post as |post|}}
+<div class="card col-8 postmain">
+	<h5 class="card-title"><a href="/post/{{id}}">  {{post_title}}</a> </h5>
+	<p class="card-text">
+	created on	{{format_date post.date_created}}
+	</p>
+    <br>
+    <div class="container-fluid">
+        <div class="row justify-content-end">
+            <a href="#"><button class="button"> Delete post</button></a>  
+            <a href="#"><button class="button"> edit post</button></a>  
+        </div>
+    </div>
+</div>
+
+{{/each}}
