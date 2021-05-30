@@ -29,28 +29,22 @@ res.render("homepage", {
 }
 });
 
-// router.get("/post/:id", async(req,res) => {
-//     try{
-//         const postData = await Post.findByPk(req.params.id, {
-//             include: [
-//                 {
-//                     model:User,
-//                     attributes:["user_name"]
-//                 },
-//                 {
-//                     model:Comment,
-//                     attributes:["comment_text","user_id"]
-//                 }
-//             ]
-//         });
+router.get("/dahsboard", withAuth, async(req,res)=>{
+    try{
+        const userdata = await User.findByPk(req.session,user_id, {
+            attributes:{ exclude:["user_password"]},
+            include:[{model: Post}],
+        });
 
-//         const post=postData.get({plain:true});
-
-//         res.render("postmain", { ...post, logged_in:req.session.logged_in});
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
-// });
+        const user=userdata.get({plain:true});
+        res.render("dashboard",{
+            ...user,
+            logged_in:true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 
 
