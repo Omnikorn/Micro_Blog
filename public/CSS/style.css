@@ -2,8 +2,15 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: blanchedalmond;
+    
+}
+
+
+
 .postmain{
-    background-color: rgb(222, 135, 200);
+    background-color: rgb(135, 218, 197);
     padding: 1%;
     margin-top: 1em;
     padding: 00.5em;

@@ -29,9 +29,19 @@ res.render("homepage", {
 }
 });
 
+router.get("/login", (req,res) => {
+    if(req.session.logged_in) {
+        res.redirect('/')
+    }
+    res.render("login")
+})
+
 router.get("/dahsboard", withAuth, async(req,res)=>{
+   console.log("Dashboard rendering hit")
+    res.render("dashboard")
+    /*
     try{
-        const userdata = await User.findByPk(req.session,user_id, {
+        const userdata = await User.findByPk(req.session.user_id, {
             attributes:{ exclude:["user_password"]},
             include:[{model: Post}],
         });
@@ -44,6 +54,8 @@ router.get("/dahsboard", withAuth, async(req,res)=>{
     } catch (err) {
         res.status(500).json(err);
     }
+    */
+
 })
 
 
