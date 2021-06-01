@@ -37,7 +37,12 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/homepage');
+        // document.location.replace('/dashboard');
+        const page = await fetch("/dashboard",
+        {
+          method:"GET",
+          headers:{"Content-Type" : "application/json"}
+        })
       } else {
         alert(response.statusText);
       }

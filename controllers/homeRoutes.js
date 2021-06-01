@@ -36,27 +36,6 @@ router.get("/login", (req,res) => {
     res.render("login")
 })
 
-router.get("/dahsboard", withAuth, async(req,res)=>{
-   console.log("Dashboard rendering hit")
-    res.render("dashboard")
-    /*
-    try{
-        const userdata = await User.findByPk(req.session.user_id, {
-            attributes:{ exclude:["user_password"]},
-            include:[{model: Post}],
-        });
-
-        const user=userdata.get({plain:true});
-        res.render("dashboard",{
-            ...user,
-            logged_in:true
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-    */
-
-})
 
 
 
